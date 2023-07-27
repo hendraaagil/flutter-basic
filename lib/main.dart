@@ -23,6 +23,18 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
         _isFavorited = true;
       }
     });
+
+    final snackBar = SnackBar(
+      content:
+          Text(_isFavorited ? 'Added to Favorites' : 'Removed from Favorites'),
+      action: SnackBarAction(
+        label: 'Close',
+        onPressed: () {
+          // Some code to undo the change.
+        },
+      ),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
   @override
